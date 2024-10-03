@@ -5,22 +5,25 @@ import Darkmode from './Darkmode';
 const Navbar = () => {
   const navOptions = (
     <>
-      <li>
+      <li className="hover:bg-emerald-500 rounded-sm">
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/">Products</Link>
+      <li className="hover:bg-emerald-500 rounded-sm">
+        <Link to="/products">Products</Link>
       </li>
-      <li>
+      <li className="hover:bg-emerald-500 rounded-sm">
         <Link to="/">Contact</Link>
       </li>
-      <li>
+      <li className="hover:bg-emerald-500 rounded-sm">
         <Link to="/">About</Link>
+      </li>
+      <li className="hover:bg-emerald-500 rounded-sm">
+        <Link to="/login">Login</Link>
       </li>
     </>
   );
     return (
-      <div className="navbar bg-base-100">
+      <div className="navbar sticky top-0 z-30 bg-black bg-opacity-65">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,9 +52,7 @@ const Navbar = () => {
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {navOptions}
-          </ul>
+          <ul className="menu menu-horizontal px-1 text-white">{navOptions}</ul>
         </div>
         <div className="navbar-end md:pr-7">
           <Darkmode></Darkmode>
